@@ -11,11 +11,23 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "Recent Products" do
-
+                    table_for Product.order('prod_id desc').limit 5 do
+                      column("Availability")   {|products| products.available}
+                      column("Cake Name"){|products| products.name}
+                      column("Price")   {|products| products.price}
+                      end
 
           end
         end
+    end
+
+    columns do
+      column do
+        panel "Recent Customers" do
+
+        end
       end
+    end
 
     #   column do
     #     panel "Info" do
