@@ -24,7 +24,12 @@ ActiveAdmin.register_page "Dashboard" do
     columns do
       column do
         panel "Recent Customers" do
-
+                table_for Customer.order('cust_ID desc').limit 5 do
+                  column("ID") {|customers| customers.cust_ID}
+                  column("Full Name") {|customers| "#{customers.first_name} #{customers.last_name}"}
+                  column("Address") {|customers| customers.address}
+                  column("Phone Number") {|customers| customers.phonenumber}
+                end
         end
       end
     end
