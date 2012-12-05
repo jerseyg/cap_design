@@ -39,3 +39,5 @@ gem 'jquery-rails'
 
 
 gem 'activeadmin'
+
+gem 'paperclip', :git => "git://github.com/thoughtbot/paperclip.git"

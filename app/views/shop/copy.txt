@@ -1,0 +1,61 @@
+<div class="eight columns">
+
+        <div class="row">
+
+          <% @products.each do |product| %>
+              <div class="four mobile-two columns">
+                <% if product.image_file_name %>
+
+               	 <%=  link_to image_tag(product.image_file_name), product  %>
+
+                   <%	 else %>
+                    <%=  link_to image_tag("http://placehold.it/1000x1000&text=No image"), product  %>
+                    <%	end  %>
+                <div class="panel">
+                  <h5><%= product.name %></h5><br />
+                  8:58 AM 2012-12-05
+                  <h6 class="subheader">In Stock?<% if product.available == true %>
+                        <b>yes</b>
+                    <% else %>
+                        <b>no   </b>
+                    <% end %>
+
+                  </h6>
+                </div>
+
+
+              </div>
+
+
+          <% end %>
+
+
+
+          <!-- End Thumbnails -->
+
+
+          <!-- Managed By -->
+
+          <div class="twelve columns">
+            <div class="panel">
+              <div class="row">
+
+                <div class="two mobile-two columns">
+                  <img src="http://placehold.it/300x300&text=Site Owner">
+                </div>
+
+                <div class="ten mobile-two columns">
+                  <strong>This Site Is Managed By<hr/></strong>
+
+                  Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- End Managed By -->
+
+        </div>
+      </div>
+    </div>

@@ -1,4 +1,8 @@
 CapDesign::Application.routes.draw do
+  get "shop/new"
+
+  get "shop/create"
+
   resources :accounts
 
   resources :customers
@@ -10,7 +14,7 @@ CapDesign::Application.routes.draw do
   resources :products
 
 
-  match "/" => "products#index"
+  match "/" => "shop#index"
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
