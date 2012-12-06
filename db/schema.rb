@@ -11,7 +11,14 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20121205125041) do
+ActiveRecord::Schema.define(:version => 20121206012958) do
+
+  create_table "abouts", :force => true do |t|
+    t.text     "about"
+    t.text     "contact"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
+  end
 
   create_table "accounts", :force => true do |t|
     t.integer  "acc_ID"
@@ -55,6 +62,14 @@ ActiveRecord::Schema.define(:version => 20121205125041) do
   add_index "admin_users", ["email"], :name => "index_admin_users_on_email", :unique => true
   add_index "admin_users", ["reset_password_token"], :name => "index_admin_users_on_reset_password_token", :unique => true
 
+  create_table "categories", :force => true do |t|
+    t.integer  "cat_id"
+    t.string   "name"
+    t.string   "description"
+    t.datetime "created_at",  :null => false
+    t.datetime "updated_at",  :null => false
+  end
+
   create_table "customers", :force => true do |t|
     t.string   "first_name"
     t.string   "last_name"
@@ -77,6 +92,21 @@ ActiveRecord::Schema.define(:version => 20121205125041) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "cat_id"
+    t.boolean  "sale"
+    t.decimal  "saleprice"
+    t.boolean  "new"
+  end
+
+  create_table "provinces", :force => true do |t|
+    t.integer  "prov_id"
+    t.string   "province"
+    t.decimal  "PST_tax"
+    t.decimal  "GST_tax"
+    t.decimal  "QST_tax"
+    t.decimal  "HST_tax"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
 end

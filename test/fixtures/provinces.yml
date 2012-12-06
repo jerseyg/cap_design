@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  prov_id: 1
+  province: MyString
+  PST_tax: 9.99
+  GST_tax: 9.99
+  QST_tax: 9.99
+  HST_tax: 9.99
+
+two:
+  prov_id: 1
+  province: MyString
+  PST_tax: 9.99
+  GST_tax: 9.99
+  QST_tax: 9.99
+  HST_tax: 9.99

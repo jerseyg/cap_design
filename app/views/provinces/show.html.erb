@@ -1,0 +1,35 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Prov:</b>
+  <%= @province.prov_id %>
+</p>
+
+<p>
+  <b>Province:</b>
+  <%= @province.province %>
+</p>
+
+<p>
+  <b>Pst tax:</b>
+  <%= @province.PST_tax %>
+</p>
+
+<p>
+  <b>Gst tax:</b>
+  <%= @province.GST_tax %>
+</p>
+
+<p>
+  <b>Qst tax:</b>
+  <%= @province.QST_tax %>
+</p>
+
+<p>
+  <b>Hst tax:</b>
+  <%= @province.HST_tax %>
+</p>
+
+
+<%= link_to 'Edit', edit_province_path(@province) %> |
+<%= link_to 'Back', provinces_path %>

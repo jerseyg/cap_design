@@ -60,12 +60,10 @@
 
       <div class="twelve columns">
 
-        <div class="product">
-          <p>Image:</p>
-          <p>Name :  <%= @product.name  %></p>
-          <p>Description: <%= @product.description %></p>
-          <p>Price: <%= @product.price %></p>
-        </div>
+        <h1>Contact Us</h1>
+        <% @about.each do |abouts| %>
+            <%=	 abouts.contact %>
+        <% end %>
 
         <%=	link_to "Back to Home Page" , '/'  %>
       </div>

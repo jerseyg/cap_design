@@ -36,14 +36,17 @@
         <ul class="top-bar">
 
           <ul>
-            <li class="name"><h1><a href="#">Title</a></h1></li>
+            <li class="name"><h1><a href="#">Nav</a></h1></li>
             <li class="toggle-topbar"><a href="#"></a></li>
           </ul>
 
           <section>
             <ul class="left">
               <li><a href="/">Home</a></li>
+              <li><a href="/about">About</a></li>
+              <li><a href="/contact">Contacts</a></li>
             </ul>
+
 
           </section>
 
@@ -61,7 +64,7 @@
         <img src="http://placehold.it/500x500&text=Logo">
 
         <div class="hide-for-small panel">
-          <h3>Header</h3>
+          <h3>Captivating Design</h3>
           <h5 class="subheader">Risus ligula, aliquam nec fermentum vitae, sollicitudin eget urna. Donec dignissim nibh fermentum odio ornare sagittis.
           </h5>
         </div>
@@ -91,8 +94,18 @@
             <%	end  %>
 
             <div class="panel">
-              <%= product.name %>
-              <h6 class="subheader"><%= number_to_currency(product.price) %></h6>
+              <%= product.name %>    <% if product.sale %>
+                  *
+              <% else %>
+                  <!-- nothing -->
+              <% end %>
+              <br />
+              <h6 class="subheader"><b>Regular Price:</b> <%= number_to_currency(product.price) %></h6>
+              <% if product.sale %>
+              <h6 class="subheader"><b>Sale Price: </b><%= number_to_currency(product.saleprice) %></h6>
+              <% else %>
+                    <!-- nothing -->
+              <% end %>
               <h6 class="subheader">In Stock?
                 <% if product.available == true %>
                     <b>yes</b>
